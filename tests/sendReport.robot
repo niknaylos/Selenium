@@ -8,9 +8,12 @@ Library             DateTime
 
 *** Tasks ***
 Login into Tawasal
+    ${service}=    Evaluate
+    ...    sys.modules['selenium.webdriver.chrome.service'].Service('/opt/homebrew/bin/chromedriver')
+    ...    sys, selenium.webdriver.chrome.service
     ${options}=    Evaluate    sys.modules['selenium.webdriver.chrome.options'].Options()    sys
     Call Method    ${options}    add_argument    --disable-notifications
-    ${driver}=    Create Webdriver    Chrome    options=${options}
+    ${driver}=    Create Webdriver    Chrome    service=${service}    options=${options}
     Open twl web
     Input phone
     Input OTP
