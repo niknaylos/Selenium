@@ -22,7 +22,7 @@ Open twl web
     Go To    https://web.tawasal.ae/
 
 Input phone
-    Input Text    css:#sign-in-phone-number   9996617843
+    Input Text    css:sign-in-phone-number    9996617843
     Wait Until Element Is Visible    css:.Button.default.has-ripple.primary    30s
     Click Button    css:.Button.default.has-ripple.primary
 
