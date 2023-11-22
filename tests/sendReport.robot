@@ -7,13 +7,7 @@ Library             DateTime
 
 
 *** Tasks ***
-Login into Tawasal
-    ${service}=    Evaluate
-    ...    sys.modules['selenium.webdriver.chrome.service'].Service('/opt/homebrew/bin/chromedriver')
-    ...    sys, selenium.webdriver.chrome.service
-    ${options}=    Evaluate    sys.modules['selenium.webdriver.chrome.options'].Options()    sys
-    Call Method    ${options}    add_argument    --disable-notifications
-    ${driver}=    Create Webdriver    Chrome    service=${service}    options=${options}
+Login into Tawasal 
     Open twl web
     Input phone
     Input OTP
@@ -23,10 +17,12 @@ Login into Tawasal
 
 *** Keywords ***
 Open twl web
+    Open Browser
+    Maximize Browser Window
     Go To    https://web.tawasal.ae/
 
 Input phone
-    Press Keys    sign-in-phone-number    9996617843
+    Input Text    css:#sign-in-phone-number   9996617843
     Wait Until Element Is Visible    css:.Button.default.has-ripple.primary    30s
     Click Button    css:.Button.default.has-ripple.primary
 
