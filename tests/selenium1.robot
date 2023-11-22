@@ -23,6 +23,7 @@ Login into Tawasal
     Open Firefox Without Pop-Ups
     Input phone
     Input OTP
+Send message to User    
     Open chat
     Send message
 
